@@ -14,6 +14,13 @@
 
 //Default constructor
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade(grade){
+	
+	if (_grade < 1){
+
+	}
+	else if (_grade > 150){
+		
+	}
 	std::cout
 		<< _name
 		<< " is hired in the Company"
@@ -38,4 +45,18 @@ Bureaucrat::~Bureaucrat(){
 		<< _name
 		<< " is fired"
 		<< std::endl;
+}
+
+//Getters
+const std::string& Bureaucrat::getName() const{
+	return (_name);
+}
+
+int Bureaucrat::getGrade() const{
+	return (_grade);
+}
+
+std::ostream&	operator<<(std::ostream& os, const Bureaucrat obj){
+	os << obj.getName() <<", bureaucrat grade " << obj.getGrade();
+	return (os);
 }

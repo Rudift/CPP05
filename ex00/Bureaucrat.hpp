@@ -32,6 +32,14 @@
             //Member fonctions
             const std::string& getName() const;
             int getGrade() const;
+
+            //Exceptions classes
+            class GradeTooHighException{
+
+            };
+            class GradeTooLowException{
+
+            };
     };
 	//Insertion overload
 	std::ostream&	operator<<(std::ostream& os, const Bureaucrat obj);
