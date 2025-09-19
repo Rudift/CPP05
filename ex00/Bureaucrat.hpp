@@ -15,6 +15,7 @@
 
 #  include <string>
 #  include <iostream>
+#  include "Colors.hpp"
 
     class Bureaucrat
     {
@@ -30,15 +31,17 @@
 			~Bureaucrat();
 
             //Member fonctions
-            const std::string& getName() const;
-            int getGrade() const;
+            const   std::string& getName() const;
+            int     getGrade() const;
+            void    incrementGrade();
+            void    decrementGrade();
 
             //Exceptions classes
-            class GradeTooHighException{
-
+            class GradeTooHighException : public std::exception{
+                const char* what() const throw();
             };
-            class GradeTooLowException{
-
+            class GradeTooLowException : public std::exception{
+                const char* what() const throw();
             };
     };
 	//Insertion overload
