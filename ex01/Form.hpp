@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include "Colors.hpp"
+#include "Bureaucrat.hpp"
 
 class Form
 {
@@ -35,9 +36,20 @@ class Form
 		//Getters
 		const std::string	getName()const;
 		bool				getSigned()const;
-		const int			getSignGrade()const;
-		const int			getExecGrade()const;
+		int			getSignGrade()const;
+		int			getExecGrade()const;
+
+		//Exception classes
+		class GradeTooHighException : public std::exception{
+			const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception{
+			const char* what() const throw();
+		};
 
 };
+
+//Insertion overload
+std::ostream&	operator<<(std::ostream& os, const Form& obj);
 
 #endif

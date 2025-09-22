@@ -14,7 +14,19 @@
 
 //Default constructor
 Form::Form(const std::string name, const int signGrade, const int execGrade): _name(name), _signGrade(signGrade), _execGrade(execGrade){
-	_signed = false;
+	if (_signGrade < 1 || _execGrade < 1){
+		throw GradeTooHighException();
+	}else if (_signGrade > 150 || _execGrade > 150){
+		throw GradeTooLowException();
+	}else{
+		_signed = false;
+		std::cout
+			<< "Form "
+			<< _name
+			<< "is created"
+			<< std::endl;
+	}
+	
 }
 
 //Copy constructor
@@ -40,6 +52,7 @@ Form::~Form(){
 		<< std::endl;
 }
 
+//Getters
 const std::string	Form::getName()const{
 	return (_name);
 }
@@ -48,10 +61,31 @@ bool	Form::getSigned()const{
 	return (_signed);
 }
 
-const int			Form::getSignGrade()const{
+int			Form::getSignGrade()const{
 	return (_signGrade);
 }
 
-const int			Form::getExecGrade()const{
+int			Form::getExecGrade()const{
 	return (_execGrade);
+}
+
+//Exceptions
+const char* Form::GradeTooHighException::what() const throw(){
+	return ("Grade too high");
+}
+
+const char* Form::GradeTooLowException::what() const throw(){
+	return ("Grade too low");
+}
+
+//Insertion overload
+std::ostream&	operator<<(std::ostream& os, const Form& obj){
+	os 	<< "Form " << obj.getName() << "\n"
+		<< "Grade required to sign: " << obj.getSignGrade() << "\n"
+		<< "Grade required to execute: " << obj.getExecGrade() << "\n";
+	if (obj.getSigned())
+		os << GREEN + "Signed" + RESET;
+	else
+		os << RED + "Non signed" + RESET;
+	return (os);
 }

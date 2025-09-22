@@ -6,7 +6,8 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 BUILD_DIR = build
 
 SRCS = main.cpp \
-	Bureaucrat.cpp 
+	Bureaucrat.cpp \
+	Form.cpp
 
 OBJS = $(SRCS:%.cpp=$(BUILD_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)

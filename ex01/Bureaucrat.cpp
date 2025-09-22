@@ -17,11 +17,9 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade
 	
 	if (_grade < 1){
 		throw GradeTooHighException();
-	}
-	else if (_grade > 150){
+	}else if (_grade > 150){
 		throw GradeTooLowException();
-	}
-	else
+	}else
 		std::cout
 			<< _name
 			<< " is hired in the Company"
