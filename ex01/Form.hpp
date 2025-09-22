@@ -16,7 +16,9 @@
 #include <string>
 #include <iostream>
 #include "Colors.hpp"
-#include "Bureaucrat.hpp"
+
+// Forward declaration
+class Bureaucrat;
 
 class Form
 {
@@ -38,6 +40,9 @@ class Form
 		bool				getSigned()const;
 		int			getSignGrade()const;
 		int			getExecGrade()const;
+
+		//Member fonctions
+		void	beSigned(Bureaucrat& bureaucrat);
 
 		//Exception classes
 		class GradeTooHighException : public std::exception{

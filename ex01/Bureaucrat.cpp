@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 //Default constructor
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade(grade){
@@ -73,6 +74,26 @@ void	Bureaucrat::decrementGrade(){
 	else{
 		_grade++;
 		std::cout << RED << _name << " is retrograded" << RESET << std::endl;
+	}
+}
+
+void	Bureaucrat::signForm(Form& form){
+	try{
+		form.beSigned(*this);
+		std::cout
+			<< YELLOW << _name
+			<< GREEN << " signed "
+			<< YELLOW << form.getName()
+			<< RESET << std::endl;
+	}
+	catch(std::exception &e){
+		std::cerr
+			<< YELLOW << _name
+			<< RED << " couldn't sign "
+			<< YELLOW << form.getName()
+			<< RED << " because "
+			<< YELLOW << e.what()
+			<< RESET << std::endl;
 	}
 }
 

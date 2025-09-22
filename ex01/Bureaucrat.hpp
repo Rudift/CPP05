@@ -17,6 +17,9 @@
 #  include <iostream>
 #  include "Colors.hpp"
 
+// Forward declaration
+class Form;
+
     class Bureaucrat
     {
         private:
@@ -35,6 +38,7 @@
             int     getGrade() const;
             void    incrementGrade();
             void    decrementGrade();
+            void    signForm(Form& form);
 
             //Exceptions classes
             class GradeTooHighException : public std::exception{

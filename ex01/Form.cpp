@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 //Default constructor
 Form::Form(const std::string name, const int signGrade, const int execGrade): _name(name), _signGrade(signGrade), _execGrade(execGrade){
@@ -31,7 +32,7 @@ Form::Form(const std::string name, const int signGrade, const int execGrade): _n
 
 //Copy constructor
 Form::Form(const Form& other) : _name(other._name), _signGrade(other._signGrade), _execGrade(other._execGrade){
-
+	
 }
 
 //Assignement operator
@@ -46,7 +47,7 @@ Form::~Form(){
 	std::cout
 		<< RED
 		<< _name
-		<< " formular was burned"
+		<< " form was burned"
 		<< "\xF0\x9F\x94\xA5"
 		<< RESET
 		<< std::endl;
@@ -68,6 +69,15 @@ int			Form::getSignGrade()const{
 int			Form::getExecGrade()const{
 	return (_execGrade);
 }
+
+//Member fonctions
+void	Form::beSigned(Bureaucrat& bureaucrat){
+	if (bureaucrat.getGrade() > _signGrade)
+		throw GradeTooLowException();
+	else
+		_signed = true;
+}
+
 
 //Exceptions
 const char* Form::GradeTooHighException::what() const throw(){
