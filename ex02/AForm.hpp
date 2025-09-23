@@ -42,13 +42,17 @@ class AForm
 		int			getExecGrade()const;
 
 		//Member fonctions
-		void	beSigned(Bureaucrat& bureaucrat);
+		void			beSigned(Bureaucrat& bureaucrat);
+		virtual void	execute(Bureaucrat const &executor) const = 0;
 
 		//Exception classes
 		class GradeTooHighException : public std::exception{
 			const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception{
+			const char* what() const throw();
+		};
+		class NotSignedException : public std::exception{
 			const char* what() const throw();
 		};
 
