@@ -7,7 +7,10 @@ BUILD_DIR = build
 
 SRCS = main.cpp \
 	Bureaucrat.cpp \
-	Form.cpp
+	AForm.cpp \
+	RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp \
+	ShrubberyCreationForm.cpp 
 
 OBJS = $(SRCS:%.cpp=$(BUILD_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)

@@ -22,13 +22,13 @@ class	RobotomyRequestForm : public AForm{
 	public :
 		//Canonical
 		RobotomyRequestForm(const std::string target);
-		RobotomyRequestForm(RobotomyRequestForm& other);
+		RobotomyRequestForm(const RobotomyRequestForm& other);
 		RobotomyRequestForm&	operator=(const RobotomyRequestForm& other);
 		~RobotomyRequestForm();
 
 		//Member fonctions
 		void	execute(Bureaucrat const &executor) const;
-		void	robotomy(Bureaucrat const &executor) const;
+		void	robotomy() const;
 
 };
 

@@ -20,7 +20,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string target)
 	: AForm("RobotomyRequestForm", 72, 45), _target(target){}
 
 //Copy constructor
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm& other)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
 	: AForm(other), _target(other._target){}
 
 //Assignement operator
@@ -42,11 +42,11 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const{
 	}else if(!this->getSigned()){
 		throw NotSignedException();
 	}else{
-
+		robotomy();
 	}
 }
 
-void	RobotomyRequestForm::robotomy(Bureaucrat const &executor) const{
+void	RobotomyRequestForm::robotomy() const{
 	static bool	init = false;
 	if (!init){
 		srand(static_cast<unsigned int>(time(0)));

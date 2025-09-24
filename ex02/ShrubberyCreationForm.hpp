@@ -22,12 +22,13 @@ class ShrubberyCreationForm : public AForm{
 	public :
 		//Canonical
 		ShrubberyCreationForm(const std::string target);
-		ShrubberyCreationForm(ShrubberyCreationForm& other);
+		ShrubberyCreationForm(const ShrubberyCreationForm& other);
 		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm& other);
 		~ShrubberyCreationForm();
 
 		//Member fonctions
 		void	execute(Bureaucrat const &executor) const;
+		void	createTree()const;
 };
 
 #endif

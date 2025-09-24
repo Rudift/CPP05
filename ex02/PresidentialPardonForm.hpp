@@ -22,7 +22,7 @@ class PresidentialPardonForm : public AForm{
 	public :
 		//Canonical
 		PresidentialPardonForm(const std::string target);
-		PresidentialPardonForm(PresidentialPardonForm& other);
+		PresidentialPardonForm(const PresidentialPardonForm& other);
 		PresidentialPardonForm&	operator=(const PresidentialPardonForm& other);
 		~PresidentialPardonForm();
 

@@ -18,7 +18,7 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string target)
 	: AForm("PresidentialPardonForm", 25, 5), _target(target){}
 
 //Copy constructor
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm& other)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)
 	: AForm(other), _target(other._target){}
 
 //Assignement operator

@@ -18,7 +18,7 @@
 #  include "Colors.hpp"
 
 // Forward declaration
-class Form;
+class AForm;
 
     class Bureaucrat
     {
@@ -38,7 +38,7 @@ class Form;
             int     getGrade() const;
             void    incrementGrade();
             void    decrementGrade();
-            void    signForm(Form& form);
+            void    signForm(AForm& form);
 
             //Exceptions classes
             class GradeTooHighException : public std::exception{
