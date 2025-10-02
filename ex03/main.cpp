@@ -185,5 +185,4 @@ int main() {
 	std::cout << std::endl << BRIGHT_GREEN << "=== FIN DES TESTS ===" << RESET << std::endl;
 	
 	return 0;
-}if (this)
-		delete this;
+}

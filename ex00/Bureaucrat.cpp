@@ -78,7 +78,6 @@ void	Bureaucrat::decrementGrade(){
 	}
 }
 
-
 //Exceptions
 
 const char* Bureaucrat::GradeTooHighException::what() const throw(){

@@ -64,5 +64,5 @@ int main(){
 	catch (std::exception &e){
 		std::cerr << RED + "Test 5 failed: " << e.what() << RESET << std::endl;
 	}
-	std::cout << GREEN << "Test 5 succeed !" << std::endl;
+	std::cout << GREEN << "Test 5 succeed !" << RESET << std::endl;
 }
